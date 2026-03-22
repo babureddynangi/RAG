@@ -2,5 +2,7 @@ __pycache__/
 *.pyc
 *.pkl
 *.zip
-outputs/
+outputs/*.pkl
+outputs/*.faiss
+outputs/*.jsonl
 .env

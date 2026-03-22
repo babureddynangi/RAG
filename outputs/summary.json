@@ -1,0 +1,9 @@
+{
+  "n_queries": 40,
+  "baseline_top1_acc": 0.95,
+  "baseline_top3_acc": 0.975,
+  "state_rag_top1_acc": 0.975,
+  "state_rag_top3_acc": 1.0,
+  "stage_confusion_rate": 0.0,
+  "avg_latency_ms": 357.5
+}

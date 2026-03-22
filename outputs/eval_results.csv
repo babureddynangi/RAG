@@ -1,0 +1,41 @@
+query_id,text,stage,baseline_h1,baseline_h3,state_rag_h1,state_rag_h3,stage_confusion,latency_ms,baseline_top1,state_rag_top1
+Q001,What are the adverse action notice requirements under ECOA?,S3,1,1,1,1,0,12836,C001,C001
+Q002,What must an adverse action notice include when based on a credit report?,S3,1,1,1,1,0,43,C002,C002
+Q003,What documentation is required during origination for identity verification?,S1,1,1,1,1,0,41,C003,C003
+Q004,What prohibited characteristics must be excluded from credit scoring models?,S2,1,1,1,1,0,22,C004,C004
+Q005,What is the timeline for investigating a Regulation E error notice?,S4,1,1,1,1,0,45,C005,C005
+Q006,How long does a creditor have to resolve a billing dispute under FCBA?,S4,1,1,1,1,0,37,C006,C006
+Q007,What is the zero liability policy for unauthorized card transactions?,S5,1,1,1,1,0,32,C007,C007
+Q008,When must a Suspicious Activity Report be filed?,S5,1,1,1,1,0,30,C008,C008
+Q009,What must a debt collector include in the initial validation notice?,S6,1,1,1,1,0,38,C009,C009
+Q010,When must the first contact attempt be made for early collections?,S6,1,1,1,1,0,31,C010,C010
+Q011,After how many days of delinquency can an account be charged off?,S7,1,1,1,1,0,31,C011,C011
+Q012,What must be included in a debt sale agreement?,S7,1,1,1,1,0,35,C012,C012
+Q013,How many days before the due date must periodic statements be sent?,S8,1,1,1,1,0,35,C013,C013
+Q014,How quickly must a payoff statement be provided?,S8,1,1,1,1,0,40,C014,C014
+Q015,What income documentation is required for underwriting?,S2,1,1,1,1,0,22,C015,C015
+Q016,What is the maximum debt-to-income ratio for prime credit products?,S2,1,1,1,1,0,46,C016,C016
+Q017,Can adverse action notices be sent electronically?,S3,1,1,1,1,0,32,C017,C017
+Q018,What is the timeline for responding to a written dispute?,S4,1,1,1,1,0,20,C018,C018
+Q019,How long must a fraud alert be honored?,S5,1,1,1,1,0,42,C019,C019
+Q020,What time restrictions apply to debt collector phone calls?,S6,1,1,1,1,0,35,C020,C020
+Q021,What notice is required before an unsolicited credit limit increase?,S8,1,1,1,1,0,35,C021,C021
+Q022,What disclosures are required at application intake under TILA?,S1,1,1,1,1,0,31,C022,C022
+Q023,What must a furnisher do when a consumer disputes credit bureau information?,S4,1,1,1,1,0,35,C023,C023
+Q024,How much advance notice is required before creditor-initiated account closure?,S8,1,1,1,1,0,37,C024,C024
+Q025,What is the Military Lending Act rate cap for covered borrowers?,S1,1,1,1,1,0,42,C025,C025
+Q026,What is the current policy for early collections contact timing?,S6,1,1,1,1,0,33,C010,C010
+Q027,What must a credit card statement include regarding minimum payments?,S8,1,1,1,1,0,37,C027,C027
+Q028,What does SCRA require for servicemember interest rates?,S8,1,1,1,1,0,34,C028,C028
+Q029,Can a creditor require a spouse to co-sign on a joint application?,S2,1,1,1,1,0,115,C029,C029
+Q030,What is the CFPB UDAAP unfairness standard?,S1,1,1,1,1,0,33,C030,C030
+Q031,What are the dispute resolution requirements for billing errors?,S4,1,1,1,1,0,30,C006,C006
+Q032,What fraud reporting obligations exist for financial institutions?,S5,0,0,0,1,0,44,C030,C019
+Q033,What are the FDCPA restrictions on collector communications?,S6,1,1,1,1,0,36,C020,C020
+Q034,What credit reporting obligations apply after charge-off?,S7,1,1,1,1,0,35,C011,C011
+Q035,What are the CARD Act statement requirements?,S8,0,1,1,1,0,36,C022,C013
+Q036,What underwriting documentation is required for self-employed applicants?,S2,1,1,1,1,0,42,C015,C015
+Q037,What are the notice requirements for adverse action based on credit score?,S3,1,1,1,1,0,38,C001,C001
+Q038,What provisional credit rights does a consumer have during a dispute?,S4,1,1,1,1,0,33,C005,C005
+Q039,What are the SAR filing thresholds?,S5,1,1,1,1,0,46,C008,C008
+Q040,What data must be provided when selling charged-off debt?,S7,1,1,1,1,0,35,C012,C012
