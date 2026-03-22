@@ -1,6 +1,9 @@
-system,top1_accuracy,top3_accuracy,stage_confusion_rate,avg_latency_ms,n_queries
-Traditional RAG,0.7333,0.8867,0.2200,99.0,150
-Hybrid,0.7467,0.9200,0.1600,99.0,150
-Reranker,0.7133,0.8733,0.2133,99.0,150
-Metadata Filter,0.8133,0.9467,0.0867,99.0,150
-State-RAG,0.8133,0.9733,0.0000,99.0,150
+system,top1_accuracy,top3_accuracy,stage_confusion_rate,avg_latency_ms,n_queries,corpus_size,notes
+Traditional RAG,0.6800,0.8067,0.1733,152.4,150,60,cosine only
+Hybrid,0.6600,0.8400,0.1200,152.4,150,60,lexical+semantic no stage
+Reranker,0.6400,0.8200,0.2200,152.4,150,60,authority+temporal rerank no stage
+Metadata Filter,0.7200,0.8733,0.0733,152.4,150,60,stage filter + cosine no scoring
+Ablation: Stage only,0.7267,0.9067,0.0067,152.4,150,60,0.70 sem + 0.30 stage
+Ablation: Stage+Temporal,0.7200,0.9000,0.0067,152.4,150,60,0.55 sem + 0.30 stage + 0.15 temp
+Ablation: Stage+Authority,0.7267,0.9267,0.0067,152.4,150,60,0.55 sem + 0.30 stage + 0.15 auth
+State-RAG (full),0.7133,0.9067,0.0000,152.4,150,60,0.45 sem + 0.30 stage + 0.15 temp + 0.10 auth

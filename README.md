@@ -36,17 +36,29 @@ Queries are mapped to one of 8 consumer credit lifecycle stages: Origination (S1
 
 ## Results
 
-Evaluated on 150 regulatory compliance queries across all 8 lifecycle stages and 7 query types (direct, paraphrase, hard negative, temporal, cross-stage, multi-chunk, ambiguous).
+Evaluated on 150 regulatory compliance queries across all 8 lifecycle stages and 7 query types (direct, paraphrase, hard negative, temporal, cross-stage, multi-chunk, ambiguous). Corpus: 60 chunks.
 
-| System          | Top-1 Accuracy | Top-3 Accuracy | Stage Confusion | Avg Latency |
-|:----------------|---------------:|---------------:|----------------:|------------:|
-| Traditional RAG |         73.33% |         88.67% |          22.00% |        99ms |
-| Hybrid          |         74.67% |         92.00% |          16.00% |        99ms |
-| Reranker        |         71.33% |         87.33% |          21.33% |        99ms |
-| Metadata Filter |         81.33% |         94.67% |           8.67% |        99ms |
-| **State-RAG**   |     **81.33%** |     **97.33%** |       **0.00%** |    **99ms** |
+| System          | Top-1  | Top-3  | Stage Confusion | Notes                               |
+|:----------------|-------:|-------:|----------------:|:------------------------------------|
+| Traditional RAG | 68.00% | 80.67% |          17.33% | cosine only                         |
+| Hybrid          | 66.00% | 84.00% |          12.00% | lexical + semantic, no stage        |
+| Reranker        | 64.00% | 82.00% |          22.00% | authority/temporal rerank, no stage |
+| Metadata Filter | 72.00% | 87.33% |           7.33% | stage filter + cosine, no scoring   |
+| **State-RAG**   | **71.33%** | **90.67%** | **0.00%** | full composite scoring          |
 
-State-RAG vs Traditional RAG: **+8 points Top-1, +8.7 points Top-3, -22 points stage confusion**. No latency overhead.
+State-RAG vs Traditional RAG: **+3.3 pts Top-1, +10 pts Top-3, −17.3 pts stage confusion**
+
+### Ablation
+
+| Configuration         | Top-1  | Top-3  | SCR    |
+|:----------------------|-------:|-------:|-------:|
+| Baseline              | 68.00% | 80.67% | 17.33% |
+| + Stage only          | 72.67% | 90.67% |  0.67% |
+| + Stage + Authority   | 72.67% | 92.67% |  0.67% |
+| + Stage + Temporal    | 72.00% | 90.00% |  0.67% |
+| Full State-RAG        | 71.33% | 90.67% |  0.00% |
+
+Stage signal alone accounts for nearly all the SCR reduction. Authority scoring adds +2 pts Top-3. Full State-RAG is the only configuration achieving 0% stage confusion.
 
 Full per-query results: [`outputs/combined_results.csv`](outputs/combined_results.csv)
 Narrative summary: [`outputs/whitepaper_results.md`](outputs/whitepaper_results.md)

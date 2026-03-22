@@ -3,8 +3,10 @@ from typing import List
 from sentence_transformers import SentenceTransformer
 
 MODEL_NAME = "all-MiniLM-L6-v2"
-CHUNKS_PATH = os.path.join(os.path.dirname(__file__), "..", "app", "data", "chunks.json")
-EMBEDDINGS_PATH = os.path.join(os.path.dirname(__file__), "..", "app", "data", "embeddings.pkl")
+DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "app", "data")
+CHUNKS_PATH = os.path.join(DATA_DIR, "chunks.json")
+CHUNKS_EXTRA_PATH = os.path.join(DATA_DIR, "chunks_extra.json")
+EMBEDDINGS_PATH = os.path.join(DATA_DIR, "embeddings.pkl")
 
 _model = None
 
@@ -19,8 +21,7 @@ def embed_text(text: str) -> List[float]:
 
 def load_chunks_with_embeddings():
     from app.core.models import Chunk
-    with open(CHUNKS_PATH) as f:
-        raw = json.load(f)
+    raw = _load_all_chunks()
     if os.path.exists(EMBEDDINGS_PATH):
         with open(EMBEDDINGS_PATH, "rb") as f:
             embeddings = pickle.load(f)
@@ -33,15 +34,29 @@ def load_chunks_with_embeddings():
         chunks.append(c)
     return chunks
 
-def main():
-    print(f"Loading chunks from {CHUNKS_PATH}")
+def _load_all_chunks():
     with open(CHUNKS_PATH) as f:
         raw = json.load(f)
+    if os.path.exists(CHUNKS_EXTRA_PATH):
+        with open(CHUNKS_EXTRA_PATH) as f:
+            raw += json.load(f)
+    return raw
+
+def main():
+    raw = _load_all_chunks()
+    print(f"Loaded {len(raw)} chunks total")
     model = get_model()
+    # load existing embeddings to avoid re-embedding unchanged chunks
     embeddings = {}
+    if os.path.exists(EMBEDDINGS_PATH):
+        with open(EMBEDDINGS_PATH, "rb") as f:
+            embeddings = pickle.load(f)
     for r in raw:
-        print(f"  Embedding {r['chunk_id']}")
-        embeddings[r["chunk_id"]] = model.encode(r["text"]).tolist()
+        if r["chunk_id"] not in embeddings:
+            print(f"  Embedding {r['chunk_id']}")
+            embeddings[r["chunk_id"]] = model.encode(r["text"]).tolist()
+        else:
+            print(f"  Cached  {r['chunk_id']}")
     with open(EMBEDDINGS_PATH, "wb") as f:
         pickle.dump(embeddings, f)
     print(f"Saved {len(embeddings)} embeddings to {EMBEDDINGS_PATH}")

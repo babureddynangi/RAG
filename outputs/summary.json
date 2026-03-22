@@ -1,35 +1,54 @@
 {
   "n_queries": 150,
+  "corpus_size": 60,
   "systems": {
     "baseline": {
-      "top1_accuracy": 0.7333,
-      "top3_accuracy": 0.8867,
-      "stage_confusion_rate": 0.22,
-      "avg_latency_ms": 99.0
+      "top1_accuracy": 0.68,
+      "top3_accuracy": 0.8067,
+      "stage_confusion_rate": 0.1733,
+      "avg_latency_ms": 152.4
     },
     "metadata": {
-      "top1_accuracy": 0.8133,
-      "top3_accuracy": 0.9467,
-      "stage_confusion_rate": 0.0867,
-      "avg_latency_ms": 99.0
+      "top1_accuracy": 0.72,
+      "top3_accuracy": 0.8733,
+      "stage_confusion_rate": 0.0733,
+      "avg_latency_ms": 152.4
     },
     "hybrid": {
-      "top1_accuracy": 0.7467,
-      "top3_accuracy": 0.92,
-      "stage_confusion_rate": 0.16,
-      "avg_latency_ms": 99.0
+      "top1_accuracy": 0.66,
+      "top3_accuracy": 0.84,
+      "stage_confusion_rate": 0.12,
+      "avg_latency_ms": 152.4
     },
     "reranker": {
-      "top1_accuracy": 0.7133,
-      "top3_accuracy": 0.8733,
-      "stage_confusion_rate": 0.2133,
-      "avg_latency_ms": 99.0
+      "top1_accuracy": 0.64,
+      "top3_accuracy": 0.82,
+      "stage_confusion_rate": 0.22,
+      "avg_latency_ms": 152.4
+    },
+    "ablation_stage": {
+      "top1_accuracy": 0.7267,
+      "top3_accuracy": 0.9067,
+      "stage_confusion_rate": 0.0067,
+      "avg_latency_ms": 152.4
+    },
+    "ablation_stage_temporal": {
+      "top1_accuracy": 0.72,
+      "top3_accuracy": 0.9,
+      "stage_confusion_rate": 0.0067,
+      "avg_latency_ms": 152.4
+    },
+    "ablation_stage_authority": {
+      "top1_accuracy": 0.7267,
+      "top3_accuracy": 0.9267,
+      "stage_confusion_rate": 0.0067,
+      "avg_latency_ms": 152.4
     },
     "state_rag": {
-      "top1_accuracy": 0.8133,
-      "top3_accuracy": 0.9733,
+      "top1_accuracy": 0.7133,
+      "top3_accuracy": 0.9067,
       "stage_confusion_rate": 0.0,
-      "avg_latency_ms": 99.0
+      "avg_latency_ms": 152.4
     }
   }
 }
