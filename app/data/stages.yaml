@@ -1,0 +1,38 @@
+stages:
+  - id: S1
+    name: origination
+    domain: credit
+    description: Initial application intake and customer identification
+  - id: S2
+    name: underwriting
+    domain: credit
+    description: Risk assessment, credit scoring, income verification
+  - id: S3
+    name: adverse_action
+    domain: credit
+    description: Denial notices, ECOA/FCRA adverse action requirements
+  - id: S4
+    name: disputes
+    domain: servicing
+    description: Billing disputes, FCBA, Reg E dispute handling
+  - id: S5
+    name: fraud
+    domain: servicing
+    description: Fraud detection, zero liability, SAR filing
+  - id: S6
+    name: collections_early
+    domain: collections
+    description: Early delinquency, payment arrangements, FDCPA
+  - id: S7
+    name: collections_late
+    domain: collections
+    description: Charge-off, debt sale, late-stage FDCPA
+  - id: S8
+    name: servicing
+    domain: servicing
+    description: Ongoing account management, statements, payoff
+
+domain_families:
+  credit: [S1, S2, S3]
+  servicing: [S4, S5, S8]
+  collections: [S6, S7]
