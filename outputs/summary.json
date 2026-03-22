@@ -1,9 +1,35 @@
 {
-  "n_queries": 40,
-  "baseline_top1_acc": 0.95,
-  "baseline_top3_acc": 0.975,
-  "state_rag_top1_acc": 0.975,
-  "state_rag_top3_acc": 1.0,
-  "stage_confusion_rate": 0.0,
-  "avg_latency_ms": 357.5
+  "n_queries": 150,
+  "systems": {
+    "baseline": {
+      "top1_accuracy": 0.7333,
+      "top3_accuracy": 0.8867,
+      "stage_confusion_rate": 0.22,
+      "avg_latency_ms": 99.0
+    },
+    "metadata": {
+      "top1_accuracy": 0.8133,
+      "top3_accuracy": 0.9467,
+      "stage_confusion_rate": 0.0867,
+      "avg_latency_ms": 99.0
+    },
+    "hybrid": {
+      "top1_accuracy": 0.7467,
+      "top3_accuracy": 0.92,
+      "stage_confusion_rate": 0.16,
+      "avg_latency_ms": 99.0
+    },
+    "reranker": {
+      "top1_accuracy": 0.7133,
+      "top3_accuracy": 0.8733,
+      "stage_confusion_rate": 0.2133,
+      "avg_latency_ms": 99.0
+    },
+    "state_rag": {
+      "top1_accuracy": 0.8133,
+      "top3_accuracy": 0.9733,
+      "stage_confusion_rate": 0.0,
+      "avg_latency_ms": 99.0
+    }
+  }
 }

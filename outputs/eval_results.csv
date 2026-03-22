@@ -1,41 +1,151 @@
-query_id,text,stage,baseline_h1,baseline_h3,state_rag_h1,state_rag_h3,stage_confusion,latency_ms,baseline_top1,state_rag_top1
-Q001,What are the adverse action notice requirements under ECOA?,S3,1,1,1,1,0,12836,C001,C001
-Q002,What must an adverse action notice include when based on a credit report?,S3,1,1,1,1,0,43,C002,C002
-Q003,What documentation is required during origination for identity verification?,S1,1,1,1,1,0,41,C003,C003
-Q004,What prohibited characteristics must be excluded from credit scoring models?,S2,1,1,1,1,0,22,C004,C004
-Q005,What is the timeline for investigating a Regulation E error notice?,S4,1,1,1,1,0,45,C005,C005
-Q006,How long does a creditor have to resolve a billing dispute under FCBA?,S4,1,1,1,1,0,37,C006,C006
-Q007,What is the zero liability policy for unauthorized card transactions?,S5,1,1,1,1,0,32,C007,C007
-Q008,When must a Suspicious Activity Report be filed?,S5,1,1,1,1,0,30,C008,C008
-Q009,What must a debt collector include in the initial validation notice?,S6,1,1,1,1,0,38,C009,C009
-Q010,When must the first contact attempt be made for early collections?,S6,1,1,1,1,0,31,C010,C010
-Q011,After how many days of delinquency can an account be charged off?,S7,1,1,1,1,0,31,C011,C011
-Q012,What must be included in a debt sale agreement?,S7,1,1,1,1,0,35,C012,C012
-Q013,How many days before the due date must periodic statements be sent?,S8,1,1,1,1,0,35,C013,C013
-Q014,How quickly must a payoff statement be provided?,S8,1,1,1,1,0,40,C014,C014
-Q015,What income documentation is required for underwriting?,S2,1,1,1,1,0,22,C015,C015
-Q016,What is the maximum debt-to-income ratio for prime credit products?,S2,1,1,1,1,0,46,C016,C016
-Q017,Can adverse action notices be sent electronically?,S3,1,1,1,1,0,32,C017,C017
-Q018,What is the timeline for responding to a written dispute?,S4,1,1,1,1,0,20,C018,C018
-Q019,How long must a fraud alert be honored?,S5,1,1,1,1,0,42,C019,C019
-Q020,What time restrictions apply to debt collector phone calls?,S6,1,1,1,1,0,35,C020,C020
-Q021,What notice is required before an unsolicited credit limit increase?,S8,1,1,1,1,0,35,C021,C021
-Q022,What disclosures are required at application intake under TILA?,S1,1,1,1,1,0,31,C022,C022
-Q023,What must a furnisher do when a consumer disputes credit bureau information?,S4,1,1,1,1,0,35,C023,C023
-Q024,How much advance notice is required before creditor-initiated account closure?,S8,1,1,1,1,0,37,C024,C024
-Q025,What is the Military Lending Act rate cap for covered borrowers?,S1,1,1,1,1,0,42,C025,C025
-Q026,What is the current policy for early collections contact timing?,S6,1,1,1,1,0,33,C010,C010
-Q027,What must a credit card statement include regarding minimum payments?,S8,1,1,1,1,0,37,C027,C027
-Q028,What does SCRA require for servicemember interest rates?,S8,1,1,1,1,0,34,C028,C028
-Q029,Can a creditor require a spouse to co-sign on a joint application?,S2,1,1,1,1,0,115,C029,C029
-Q030,What is the CFPB UDAAP unfairness standard?,S1,1,1,1,1,0,33,C030,C030
-Q031,What are the dispute resolution requirements for billing errors?,S4,1,1,1,1,0,30,C006,C006
-Q032,What fraud reporting obligations exist for financial institutions?,S5,0,0,0,1,0,44,C030,C019
-Q033,What are the FDCPA restrictions on collector communications?,S6,1,1,1,1,0,36,C020,C020
-Q034,What credit reporting obligations apply after charge-off?,S7,1,1,1,1,0,35,C011,C011
-Q035,What are the CARD Act statement requirements?,S8,0,1,1,1,0,36,C022,C013
-Q036,What underwriting documentation is required for self-employed applicants?,S2,1,1,1,1,0,42,C015,C015
-Q037,What are the notice requirements for adverse action based on credit score?,S3,1,1,1,1,0,38,C001,C001
-Q038,What provisional credit rights does a consumer have during a dispute?,S4,1,1,1,1,0,33,C005,C005
-Q039,What are the SAR filing thresholds?,S5,1,1,1,1,0,46,C008,C008
-Q040,What data must be provided when selling charged-off debt?,S7,1,1,1,1,0,35,C012,C012
+query_id,text,stage,query_type,latency_ms,baseline_h1,baseline_h3,baseline_scr,baseline_top1,metadata_h1,metadata_h3,metadata_scr,metadata_top1,hybrid_h1,hybrid_h3,hybrid_scr,hybrid_top1,reranker_h1,reranker_h3,reranker_scr,reranker_top1,state_rag_h1,state_rag_h3,state_rag_scr,state_rag_top1
+Q001,What are the adverse action notice requirements under ECOA?,S3,direct,7742,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001
+Q002,What must an adverse action notice include when based on a credit report?,S3,direct,43,1,1,0,C002,1,1,0,C002,1,1,0,C002,1,1,0,C002,1,1,0,C002
+Q003,What documentation is required during origination for identity verification?,S1,direct,44,1,1,0,C003,1,1,0,C003,1,1,0,C003,1,1,0,C003,1,1,0,C003
+Q004,What prohibited characteristics must be excluded from credit scoring models?,S2,direct,46,1,1,0,C004,1,1,0,C004,1,1,0,C004,1,1,0,C004,1,1,0,C004
+Q005,What is the timeline for investigating a Regulation E error notice?,S4,direct,51,1,1,0,C005,1,1,0,C005,1,1,0,C005,1,1,0,C005,1,1,0,C005
+Q006,How long does a creditor have to resolve a billing dispute under FCBA?,S4,direct,50,1,1,0,C006,1,1,0,C006,1,1,0,C006,1,1,0,C006,1,1,0,C006
+Q007,What is the zero liability policy for unauthorized card transactions?,S5,direct,45,1,1,0,C007,1,1,0,C007,1,1,0,C007,1,1,0,C007,1,1,0,C007
+Q008,When must a Suspicious Activity Report be filed?,S5,direct,41,1,1,0,C008,1,1,0,C008,1,1,0,C008,1,1,0,C008,1,1,0,C008
+Q009,What must a debt collector include in the initial validation notice?,S6,direct,48,1,1,0,C009,1,1,0,C009,1,1,0,C009,1,1,0,C009,1,1,0,C009
+Q010,When must the first contact attempt be made for early collections?,S6,direct,48,1,1,0,C010,1,1,0,C010,1,1,0,C010,1,1,0,C010,1,1,0,C010
+Q011,After how many days of delinquency can an account be charged off?,S7,direct,49,1,1,0,C011,1,1,0,C011,1,1,0,C011,1,1,0,C011,1,1,0,C011
+Q012,What must be included in a debt sale agreement?,S7,direct,43,1,1,0,C012,1,1,0,C012,1,1,0,C012,1,1,0,C012,1,1,0,C012
+Q013,How many days before the due date must periodic statements be sent?,S8,direct,45,1,1,0,C013,1,1,0,C013,1,1,0,C013,1,1,0,C013,1,1,0,C013
+Q014,How quickly must a payoff statement be provided?,S8,direct,47,1,1,0,C014,1,1,0,C014,1,1,0,C014,1,1,0,C014,1,1,0,C014
+Q015,What income documentation is required for underwriting?,S2,direct,42,1,1,0,C015,1,1,0,C015,1,1,0,C015,1,1,0,C015,1,1,0,C015
+Q016,What is the maximum debt-to-income ratio for prime credit products?,S2,direct,49,1,1,0,C016,1,1,0,C016,1,1,0,C016,1,1,0,C016,1,1,0,C016
+Q017,Can adverse action notices be sent electronically?,S3,direct,45,1,1,0,C017,1,1,0,C017,1,1,0,C017,1,1,0,C017,1,1,0,C017
+Q018,What is the timeline for responding to a written dispute?,S4,direct,47,1,1,0,C018,1,1,0,C018,1,1,0,C018,1,1,0,C018,1,1,0,C018
+Q019,How long must a fraud alert be honored?,S5,direct,45,1,1,0,C019,1,1,0,C019,1,1,0,C019,1,1,0,C019,1,1,0,C019
+Q020,What time restrictions apply to debt collector phone calls?,S6,direct,50,1,1,0,C020,1,1,0,C020,1,1,0,C020,1,1,0,C020,1,1,0,C020
+Q021,What notice is required before an unsolicited credit limit increase?,S8,direct,44,1,1,0,C021,1,1,0,C021,1,1,0,C021,1,1,0,C021,1,1,0,C021
+Q022,What disclosures are required at application intake under TILA?,S1,direct,48,1,1,0,C022,1,1,0,C022,1,1,0,C022,1,1,0,C022,1,1,0,C022
+Q023,What must a furnisher do when a consumer disputes credit bureau information?,S4,direct,48,1,1,0,C023,1,1,0,C023,1,1,0,C023,1,1,0,C023,1,1,0,C023
+Q024,How much advance notice is required before creditor-initiated account closure?,S8,direct,43,1,1,0,C024,1,1,0,C024,1,1,0,C024,1,1,0,C024,1,1,0,C024
+Q025,What is the Military Lending Act rate cap for covered borrowers?,S1,direct,38,1,1,0,C025,1,1,0,C025,1,1,0,C025,1,1,0,C025,1,1,0,C025
+Q026,What is the current policy for early collections contact timing?,S6,temporal,43,1,1,0,C010,1,1,0,C010,1,1,0,C010,1,1,0,C010,1,1,0,C010
+Q027,What must a credit card statement include regarding minimum payments?,S8,direct,48,1,1,0,C027,1,1,0,C027,1,1,0,C027,1,1,0,C027,1,1,0,C027
+Q028,What does SCRA require for servicemember interest rates?,S8,direct,46,1,1,0,C028,1,1,0,C028,1,1,0,C028,1,1,0,C028,1,1,0,C028
+Q029,Can a creditor require a spouse to co-sign on a joint application?,S2,direct,52,1,1,0,C029,1,1,0,C029,1,1,0,C029,1,1,0,C029,1,1,0,C029
+Q030,What is the CFPB UDAAP unfairness standard?,S1,direct,47,1,1,0,C030,1,1,0,C030,1,1,0,C030,1,1,0,C030,1,1,0,C030
+Q031,What are the dispute resolution requirements for billing errors?,S4,multi_chunk,53,1,1,0,C006,1,1,0,C006,1,1,0,C006,1,1,0,C006,1,1,0,C006
+Q032,What fraud reporting obligations exist for financial institutions?,S5,cross_stage,39,0,0,1,C030,0,1,1,C030,0,0,1,C030,0,0,1,C030,0,1,0,C019
+Q033,What are the FDCPA restrictions on collector communications?,S6,multi_chunk,48,1,1,0,C020,1,1,0,C020,1,1,0,C009,1,1,0,C020,1,1,0,C020
+Q034,What credit reporting obligations apply after charge-off?,S7,direct,47,1,1,0,C011,1,1,0,C011,1,1,0,C011,1,1,0,C011,1,1,0,C011
+Q035,What are the CARD Act statement requirements?,S8,cross_stage,42,0,1,1,C022,1,1,0,C013,1,1,0,C013,0,1,1,C022,1,1,0,C013
+Q036,What underwriting documentation is required for self-employed applicants?,S2,direct,45,1,1,0,C015,1,1,0,C015,1,1,0,C015,1,1,0,C015,1,1,0,C015
+Q037,What are the notice requirements for adverse action based on credit score?,S3,multi_chunk,48,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001
+Q038,What provisional credit rights does a consumer have during a dispute?,S4,multi_chunk,40,1,1,0,C005,1,1,0,C005,1,1,0,C005,1,1,0,C005,1,1,0,C005
+Q039,What are the SAR filing thresholds?,S5,direct,47,1,1,0,C008,1,1,0,C008,1,1,0,C008,1,1,0,C008,1,1,0,C008
+Q040,What data must be provided when selling charged-off debt?,S7,multi_chunk,50,1,1,0,C012,1,1,0,C012,1,1,0,C012,1,1,0,C012,1,1,0,C012
+Q041,A customer was denied credit. What notice must they receive?,S3,paraphrase,44,1,1,0,C001,1,1,0,C001,0,1,1,C005,1,1,0,C001,1,1,0,C001
+Q042,How do I verify a borrower's identity at application?,S1,paraphrase,49,1,1,0,C003,1,1,0,C003,1,1,0,C003,1,1,0,C003,1,1,0,C003
+Q043,What happens if a payment is missed and the account goes delinquent?,S7,paraphrase,55,0,1,1,C024,1,1,0,C011,0,0,1,C006,0,0,1,C024,1,1,0,C011
+Q044,When can we write off a bad debt?,S7,paraphrase,44,0,1,1,C009,0,1,1,C009,0,1,1,C009,0,0,1,C009,1,1,0,C011
+Q045,What are the rules for contacting customers who owe money?,S6,paraphrase,50,0,1,1,C012,0,1,0,C010,0,0,1,C012,1,1,0,C009,1,1,0,C009
+Q046,How quickly must we respond to a customer complaint about a charge?,S4,paraphrase,43,0,1,0,C018,0,1,0,C018,0,0,0,C018,0,1,0,C018,0,1,0,C018
+Q047,What disclosures must be given before a credit card is issued?,S1,paraphrase,47,0,1,1,C013,1,1,0,C022,0,1,1,C013,0,1,1,C013,1,1,0,C022
+Q048,Can we raise a customer's credit limit without asking them?,S8,paraphrase,43,1,1,0,C021,1,1,0,C021,1,1,0,C021,1,1,0,C021,1,1,0,C021
+Q049,What are the rules for closing a customer's account?,S8,paraphrase,53,1,1,0,C024,1,1,0,C024,1,1,0,C024,1,1,0,C024,1,1,0,C024
+Q050,What protections apply to military borrowers?,S1,paraphrase,53,1,1,0,C025,1,1,0,C025,1,1,0,C025,1,1,0,C025,1,1,0,C025
+Q051,What is the SAR threshold for transactions with unknown subjects?,S5,hard_negative,46,1,1,0,C008,1,1,0,C008,1,1,0,C008,1,1,0,C008,1,1,0,C008
+Q052,Does ECOA require written denial notices for all credit applications?,S3,hard_negative,51,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001
+Q053,Is a 45% DTI ratio acceptable for prime lending?,S2,hard_negative,50,1,1,0,C016,1,1,0,C016,1,1,0,C016,1,1,0,C016,1,1,0,C016
+Q054,Can a debt collector call at 7am?,S6,hard_negative,44,1,1,0,C020,1,1,0,C020,0,1,0,C009,1,1,0,C020,1,1,0,C020
+Q055,Does zero liability apply to business credit card transactions?,S5,hard_negative,44,1,1,0,C007,1,1,0,C007,1,1,0,C007,1,1,0,C007,1,1,0,C007
+Q056,Is a 30-day investigation window sufficient for Reg E disputes?,S4,hard_negative,43,0,1,0,C023,0,1,0,C023,0,1,0,C023,0,1,0,C023,0,1,0,C023
+Q057,Can a creditor use marital status in a credit scoring model?,S2,hard_negative,46,1,1,0,C004,1,1,0,C004,1,1,0,C004,0,1,0,C029,0,1,0,C029
+Q058,Does SCRA apply to credit card debt incurred after active duty begins?,S8,hard_negative,41,1,1,0,C028,1,1,0,C028,1,1,0,C028,1,1,0,C028,1,1,0,C028
+Q059,Is a verbal dispute sufficient to trigger FCBA protections?,S4,hard_negative,41,0,0,1,C030,0,0,1,C030,0,0,0,C018,0,0,1,C030,0,1,0,C018
+Q060,Can a debt be sold without providing payment history to the buyer?,S7,hard_negative,42,1,1,0,C012,1,1,0,C012,1,1,0,C012,1,1,0,C012,1,1,0,C012
+Q061,What is the collections contact policy that was in effect before March 2023?,S6,temporal,51,1,1,0,C026,1,1,0,C026,0,1,0,C010,0,0,0,C010,0,0,0,C010
+Q062,Which collections SOP is currently active?,S6,temporal,39,0,1,0,C026,0,1,0,C026,0,1,0,C026,0,0,0,C020,1,1,0,C010
+Q063,Has the early collections contact timing policy changed recently?,S6,temporal,48,1,1,0,C026,1,1,0,C026,1,1,0,C026,1,1,0,C010,1,1,0,C010
+Q064,What was the previous delinquency threshold for first contact in collections?,S6,temporal,53,1,1,0,C026,1,1,0,C026,1,1,0,C026,0,0,1,C011,0,1,0,C010
+Q065,Which version of the underwriting policy is currently in force?,S2,temporal,42,1,1,0,C004,1,1,0,C004,1,1,0,C004,0,1,0,C029,1,1,0,C004
+Q066,What are the UDAAP obligations during the origination stage?,S1,cross_stage,44,0,1,0,C003,0,1,0,C003,0,1,0,C003,1,1,0,C022,0,1,0,C003
+Q067,How does UDAAP apply to debt collection practices?,S6,cross_stage,49,0,1,1,C012,1,1,0,C020,0,1,1,C012,1,1,0,C020,1,1,0,C020
+Q068,What UDAAP risks exist in the adverse action process?,S3,cross_stage,49,1,1,1,C030,1,1,1,C030,0,1,0,C017,1,1,1,C030,0,1,0,C017
+Q069,What regulations govern both origination and underwriting?,S1,cross_stage,50,0,0,1,C004,0,0,1,C004,0,1,1,C004,0,0,1,C004,0,1,0,C030
+Q070,What obligations apply when a servicemember disputes a charge?,S4,cross_stage,40,1,1,1,C028,0,0,0,C018,1,1,1,C028,1,1,1,C028,0,0,0,C006
+Q071,What are the notice requirements when denying a credit application?,S3,ambiguous,44,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001
+Q072,What must happen within 30 days of a consumer complaint?,S4,ambiguous,53,1,1,0,C018,1,1,0,C018,1,1,0,C018,1,1,0,C018,1,1,0,C018
+Q073,What are the documentation requirements for a loan?,S1,ambiguous,50,1,1,0,C022,1,1,0,C022,1,1,0,C022,1,1,0,C022,1,1,0,C022
+Q074,What are the reporting obligations after an account problem?,S7,ambiguous,55,0,1,1,C002,1,1,0,C011,1,1,0,C011,0,1,1,C002,1,1,0,C011
+Q075,What consumer protections apply to credit card accounts?,S8,ambiguous,42,0,1,1,C007,1,1,0,C024,0,1,1,C007,1,1,0,C024,1,1,0,C024
+Q076,What are the ECOA requirements during underwriting?,S2,direct,45,1,1,0,C004,1,1,0,C004,1,1,0,C004,1,1,0,C004,1,1,0,C004
+Q077,What must be disclosed on a credit card periodic statement?,S8,direct,45,1,1,0,C013,1,1,0,C013,1,1,0,C013,1,1,0,C013,1,1,0,C013
+Q078,What are the BSA obligations at account opening?,S1,direct,52,0,1,0,C022,0,1,0,C022,1,1,0,C003,0,1,0,C022,0,1,0,C022
+Q079,What are the FCRA obligations when taking adverse action?,S3,direct,40,1,1,0,C001,1,1,0,C001,1,1,0,C002,1,1,0,C001,1,1,0,C001
+Q080,What are the Reg Z disclosure requirements for open-end credit?,S1,direct,54,1,1,0,C022,1,1,0,C022,1,1,0,C022,1,1,0,C022,1,1,0,C022
+Q081,What is the maximum MAPR under the Military Lending Act?,S1,direct,44,1,1,0,C025,1,1,0,C025,1,1,0,C025,1,1,0,C025,1,1,0,C025
+Q082,What are the income verification requirements for W-2 employees?,S2,direct,53,1,1,0,C015,1,1,0,C015,1,1,0,C015,1,1,0,C015,1,1,0,C015
+Q083,What compensating factors allow a DTI exception?,S2,direct,51,0,0,1,C030,0,1,1,C030,1,1,0,C016,0,0,1,C030,0,1,0,C004
+Q084,What is the ECOA notice timing requirement after application?,S3,direct,45,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001
+Q085,What must a Reg E provisional credit cover?,S4,direct,48,0,0,1,C003,1,1,0,C005,1,1,0,C005,0,1,1,C022,1,1,0,C005
+Q086,What is the FCBA dispute acknowledgment window?,S4,direct,47,0,0,0,C018,0,0,0,C018,0,0,0,C018,0,0,1,C030,0,0,0,C018
+Q087,What are the credit bureau notification requirements after a dispute?,S4,direct,36,0,0,1,C001,0,1,0,C006,0,1,0,C006,0,0,1,C001,0,1,0,C006
+Q088,What is the SAR non-disclosure rule?,S5,direct,46,1,1,0,C008,1,1,0,C008,1,1,0,C008,1,1,0,C008,1,1,0,C008
+Q089,What are the extended fraud alert requirements under FCRA?,S5,direct,46,1,1,0,C019,1,1,0,C019,1,1,0,C019,1,1,0,C019,1,1,0,C019
+Q090,What are the FDCPA validation notice timing requirements?,S6,direct,39,1,1,0,C009,1,1,0,C009,1,1,0,C009,1,1,0,C009,1,1,0,C009
+Q091,What documentation must accompany a debt sale?,S7,direct,36,1,1,0,C012,1,1,0,C012,1,1,0,C012,1,1,0,C012,1,1,0,C012
+Q092,What is the FFIEC charge-off timeline?,S7,direct,45,1,1,0,C011,1,1,0,C011,1,1,0,C011,1,1,0,C011,1,1,0,C011
+Q093,What are the CARD Act advance notice requirements for account closure?,S8,direct,45,1,1,0,C024,1,1,0,C024,1,1,0,C024,1,1,0,C024,1,1,0,C024
+Q094,What must a payoff statement include?,S8,direct,55,1,1,0,C014,1,1,0,C014,1,1,0,C014,1,1,0,C014,1,1,0,C014
+Q095,What are the SCRA interest rate reduction requirements?,S8,direct,45,0,1,1,C022,1,1,0,C028,1,1,0,C028,0,1,1,C022,1,1,0,C028
+Q096,What is the minimum payment warning requirement under Reg Z?,S8,direct,48,1,1,0,C027,1,1,0,C027,1,1,0,C027,1,1,0,C027,1,1,0,C027
+Q097,What are the opt-out requirements for credit limit increases?,S8,direct,52,1,1,0,C021,1,1,0,C021,1,1,0,C021,1,1,0,C021,1,1,0,C021
+Q098,What are the co-signer requirements under Reg B?,S2,direct,49,1,1,0,C029,1,1,0,C029,1,1,0,C029,1,1,0,C029,1,1,0,C029
+Q099,What is the UDAAP abusive standard?,S1,direct,48,1,1,0,C030,1,1,0,C030,1,1,0,C030,1,1,0,C030,1,1,0,C030
+Q100,What are the CIP requirements for identity verification?,S1,direct,47,1,1,0,C003,1,1,0,C003,1,1,0,C003,1,1,0,C003,1,1,0,C003
+Q101,What notice must be sent before charging off an account?,S7,paraphrase,54,0,0,1,C024,1,1,0,C011,0,1,1,C024,0,0,1,C024,1,1,0,C011
+Q102,How do we handle a customer who disputes a transaction they say they didn't make?,S5,paraphrase,47,0,0,1,C018,0,1,1,C030,0,0,1,C018,0,0,1,C023,1,1,0,C007
+Q103,What do we tell a customer when we reject their loan application?,S3,paraphrase,42,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001,1,1,0,C001
+Q104,How long do we have to investigate a fraud claim?,S5,paraphrase,57,0,0,0,C019,0,0,0,C019,0,0,0,C019,0,1,0,C019,0,1,0,C019
+Q105,What are the rules around selling delinquent accounts to collectors?,S7,paraphrase,49,1,1,0,C012,1,1,0,C012,1,1,0,C012,1,1,0,C012,1,1,0,C012
+Q106,What information must be on a monthly credit card bill?,S8,paraphrase,49,1,1,0,C027,1,1,0,C027,1,1,0,C027,1,1,0,C027,1,1,0,C027
+Q107,How do we handle a servicemember who falls behind on payments?,S8,paraphrase,51,1,1,0,C028,1,1,0,C028,1,1,0,C028,1,1,0,C028,1,1,0,C028
+Q108,What are the rules for checking income before approving a loan?,S2,paraphrase,50,1,1,0,C015,1,1,0,C015,0,1,1,C022,0,0,1,C022,0,1,0,C004
+Q109,When can we report a customer to the credit bureaus for non-payment?,S7,paraphrase,48,0,0,1,C013,0,0,1,C009,0,0,1,C006,0,0,1,C013,1,1,0,C011
+Q110,What are the rules for sending collection letters?,S6,paraphrase,43,0,0,0,C010,0,1,0,C010,0,0,0,C010,0,1,1,C013,0,1,0,C010
+Q111,Does UDAAP apply to the underwriting decision?,S2,hard_negative,38,1,1,1,C030,1,1,1,C030,0,1,0,C029,1,1,1,C030,0,1,0,C029
+Q112,Can we use age as a factor in credit scoring?,S2,hard_negative,57,1,1,0,C004,1,1,0,C004,1,1,0,C004,1,1,0,C004,1,1,0,C004
+Q113,Is a 180-day delinquency required before charge-off in all cases?,S7,hard_negative,49,1,1,0,C011,1,1,0,C011,1,1,0,C011,1,1,0,C011,1,1,0,C011
+Q114,Does the FDCPA apply to original creditors collecting their own debt?,S6,hard_negative,52,1,1,0,C009,1,1,0,C009,1,1,0,C009,1,1,0,C009,1,1,0,C009
+Q115,Can we send an adverse action notice by email without consent?,S3,hard_negative,50,1,1,0,C017,1,1,0,C017,1,1,0,C017,1,1,0,C017,1,1,0,C017
+Q116,Is a one-year fraud alert the same as an extended fraud alert?,S5,hard_negative,54,1,1,0,C019,1,1,0,C019,1,1,0,C019,1,1,0,C019,1,1,0,C019
+Q117,Does the MLA rate cap apply to mortgages?,S1,hard_negative,49,1,1,0,C025,1,1,0,C025,1,1,0,C025,1,1,0,C025,1,1,0,C025
+Q118,Can a payoff statement be provided verbally?,S8,hard_negative,39,1,1,0,C014,1,1,0,C014,1,1,0,C014,1,1,0,C014,1,1,0,C014
+Q119,Does SCRA protection end when active duty ends?,S8,hard_negative,46,1,1,0,C028,1,1,0,C028,1,1,0,C028,1,1,0,C028,1,1,0,C028
+Q120,Is a 43% DTI limit a hard cap or a guideline?,S2,hard_negative,51,1,1,0,C016,1,1,0,C016,1,1,0,C016,0,1,1,C025,1,1,0,C016
+Q121,What are the origination requirements under both TILA and BSA?,S1,cross_stage,43,1,1,0,C003,1,1,0,C003,1,1,0,C003,1,1,0,C022,1,1,0,C022
+Q122,What obligations span both the underwriting and adverse action stages?,S2,cross_stage,51,0,1,1,C017,0,1,1,C030,0,1,1,C017,0,1,1,C030,1,1,0,C029
+Q123,What are the consumer rights during both dispute resolution and fraud investigation?,S4,cross_stage,46,0,0,0,C023,0,0,0,C023,0,1,0,C018,0,0,0,C023,0,1,0,C023
+Q124,What FDCPA obligations apply in both early and late collections?,S6,cross_stage,55,1,1,0,C020,1,1,0,C020,1,1,0,C009,1,1,0,C020,1,1,0,C020
+Q125,What servicing obligations apply to both credit cards and installment loans?,S8,cross_stage,56,0,1,0,C028,0,1,0,C028,0,1,0,C028,0,1,0,C028,0,1,0,C028
+Q126,What are the notice requirements when changing account terms?,S8,ambiguous,46,1,1,0,C024,1,1,0,C024,1,1,0,C024,1,1,0,C024,1,1,0,C024
+Q127,What are the investigation timelines for consumer complaints?,S4,ambiguous,52,1,1,0,C018,1,1,0,C018,1,1,0,C018,0,1,0,C023,0,1,0,C023
+Q128,What are the disclosure requirements before extending credit?,S1,ambiguous,46,1,1,0,C022,1,1,0,C022,1,1,0,C022,1,1,0,C022,1,1,0,C022
+Q129,What are the obligations when a consumer reports a problem with their account?,S4,ambiguous,51,0,1,1,C002,1,1,0,C023,0,1,1,C002,0,1,1,C002,1,1,0,C023
+Q130,What are the requirements for handling sensitive customer information?,S1,ambiguous,48,0,0,1,C002,0,1,0,C022,0,0,1,C002,0,0,1,C002,0,1,0,C022
+Q131,What is the Reg B requirement for notifying applicants of credit decisions?,S3,direct,39,0,1,1,C022,1,1,0,C001,0,1,1,C022,0,1,1,C022,1,1,0,C001
+Q132,What are the FCRA furnisher obligations?,S4,direct,39,0,0,1,C003,0,1,1,C030,0,1,1,C028,0,0,1,C022,1,1,0,C023
+Q133,What are the CARD Act minimum payment requirements?,S8,direct,46,1,1,0,C027,1,1,0,C027,1,1,0,C013,1,1,0,C027,1,1,0,C027
+Q134,What are the BSA SAR filing requirements?,S5,direct,51,1,1,0,C008,1,1,0,C008,1,1,0,C008,1,1,0,C008,1,1,0,C008
+Q135,What are the FDCPA prohibited practices?,S6,direct,40,1,1,0,C020,1,1,0,C020,1,1,0,C020,1,1,0,C020,1,1,0,C020
+Q136,What are the Reg E error resolution timelines?,S4,direct,55,1,1,0,C005,1,1,0,C005,1,1,0,C005,1,1,0,C005,1,1,0,C005
+Q137,What are the FFIEC guidelines for charge-off reporting?,S7,direct,44,1,1,0,C011,1,1,0,C011,1,1,0,C011,1,1,0,C011,1,1,0,C011
+Q138,What are the Reg Z open-end credit disclosure requirements?,S1,direct,44,1,1,0,C022,1,1,0,C022,1,1,0,C022,1,1,0,C022,1,1,0,C022
+Q139,What are the ECOA joint application requirements?,S2,direct,51,0,1,1,C022,1,1,0,C029,1,1,0,C029,0,1,1,C022,1,1,0,C029
+Q140,What are the FCRA adverse action disclosure requirements?,S3,direct,45,0,1,0,C017,0,1,0,C017,1,1,0,C001,1,1,0,C001,1,1,0,C001
+Q141,What is the difference between a standard and extended fraud alert?,S5,hard_negative,46,1,1,0,C019,1,1,0,C019,1,1,0,C019,1,1,0,C019,1,1,0,C019
+Q142,Can a debt collector contact a consumer at their workplace?,S6,hard_negative,137,0,1,1,C012,0,1,0,C009,0,1,0,C009,0,1,0,C009,0,1,0,C009
+Q143,Does the CARD Act apply to business credit cards?,S8,hard_negative,45,0,1,1,C007,1,1,0,C013,0,1,1,C007,1,1,0,C013,1,1,0,C013
+Q144,Is income verification required for credit limit increases?,S8,hard_negative,53,1,1,0,C021,1,1,0,C021,1,1,0,C021,1,1,0,C021,1,1,0,C021
+Q145,Can a creditor charge off an account before 180 days?,S7,hard_negative,50,1,1,0,C011,1,1,0,C011,1,1,0,C011,0,1,1,C024,1,1,0,C011
+Q146,What are the UDAAP obligations across all lifecycle stages?,S1,cross_stage,46,0,1,1,C010,0,1,0,C022,0,1,1,C010,0,1,0,C022,0,1,0,C022
+Q147,What consumer protections apply from origination through charge-off?,S1,cross_stage,53,0,0,1,C007,0,1,0,C030,0,1,1,C012,0,1,0,C030,0,1,0,C030
+Q148,What are the BSA obligations across the account lifecycle?,S1,cross_stage,45,1,1,0,C003,1,1,0,C003,1,1,0,C003,0,1,0,C022,1,1,0,C003
+Q149,What Reg B obligations apply from application through adverse action?,S1,cross_stage,59,1,1,1,C001,1,1,1,C001,1,1,1,C001,1,1,1,C001,0,1,0,C030
+Q150,What are the FCRA obligations from underwriting through servicing?,S2,cross_stage,58,0,0,1,C030,0,0,1,C030,0,0,1,C028,0,0,1,C030,0,0,0,C029

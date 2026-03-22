@@ -36,27 +36,17 @@ Queries are mapped to one of 8 consumer credit lifecycle stages: Origination (S1
 
 ## Results
 
-Evaluated on 40 regulatory compliance queries across all 8 lifecycle stages.
+Evaluated on 150 regulatory compliance queries across all 8 lifecycle stages and 7 query types (direct, paraphrase, hard negative, temporal, cross-stage, multi-chunk, ambiguous).
 
 | System          | Top-1 Accuracy | Top-3 Accuracy | Stage Confusion | Avg Latency |
 |:----------------|---------------:|---------------:|----------------:|------------:|
-| Traditional RAG |          95.0% |          97.5% |             N/A |       357ms |
-| State-RAG       |          97.5% |         100.0% |           0.00% |       357ms |
+| Traditional RAG |         73.33% |         88.67% |          22.00% |        99ms |
+| Hybrid          |         74.67% |         92.00% |          16.00% |        99ms |
+| Reranker        |         71.33% |         87.33% |          21.33% |        99ms |
+| Metadata Filter |         81.33% |         94.67% |           8.67% |        99ms |
+| **State-RAG**   |     **81.33%** |     **97.33%** |       **0.00%** |    **99ms** |
 
-State-RAG recovered both queries that traditional RAG missed — both were cross-stage ambiguity cases where the correct chunk was not the top cosine match. No latency overhead.
-
-### Per-Stage Breakdown
-
-| Stage | Description            | Traditional RAG | State-RAG |
-|:------|:-----------------------|----------------:|----------:|
-| S1    | Origination            |          100.0% |    100.0% |
-| S2    | Underwriting           |          100.0% |    100.0% |
-| S3    | Adverse Action         |          100.0% |    100.0% |
-| S4    | Dispute Resolution     |          100.0% |    100.0% |
-| S5    | Fraud & BSA            |           80.0% |    100.0% |
-| S6    | Collections            |          100.0% |    100.0% |
-| S7    | Charge-Off & Debt Sale |          100.0% |    100.0% |
-| S8    | Servicing & Statements |           85.7% |     85.7% |
+State-RAG vs Traditional RAG: **+8 points Top-1, +8.7 points Top-3, -22 points stage confusion**. No latency overhead.
 
 Full per-query results: [`outputs/combined_results.csv`](outputs/combined_results.csv)
 Narrative summary: [`outputs/whitepaper_results.md`](outputs/whitepaper_results.md)
